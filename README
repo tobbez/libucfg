@@ -9,3 +9,31 @@ See example.c for how to use it.
 
 License?
 libucfg is released under the ISC License.
+
+
+Some things that are good to know:
+
+ A config file looks something like this:
+  root: {
+    child: "child value";
+    another child: "another child's value";
+    child node with list: {
+      "list item1 has some duoble-quotes:"" and "" such"" ";
+      "list item2";
+    }
+  }
+
+ Node names may contain any value except colon (':')
+
+ Double-quotes in values are escaped as two doublesquotes ('"' -> '""')
+ 
+ A node in the configuration may have a name (optional), and must have either
+ a value or a subsection.
+
+ Configuration syntax in EBNF:
+ config-node = [<node-name> , ":"] , <config-node-list> | [<node-name> , ":"] , <node-value> ;
+ config-node-list = "{" , { config-node } , "}" ;
+ node-name = <node-name-character> , { <node-name-character> } ;
+ node-name-character = ? any visible character except colon ? ;
+ node-value = '"' , { <node-value-character> } , '"' ;
+ node-value-character = ? any visible character, with each doublequote character escaped as two doublequotes ? ;
