@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 	ucfg_node_sub_create(tmp, &tmp);
 
 	/* add some values without names (i.e. a list) to the subsection */
-	ucfg_node_value_set(tmp, "list item1 has some duoble-quotes:"
+	ucfg_node_value_set(tmp, "list item1 has some double-quotes:"
 			    "\" and \" such\" ");
 	ucfg_node_next_append(tmp, &tmp);
 	ucfg_node_value_set(tmp, "list item2");
