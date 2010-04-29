@@ -1,0 +1,11 @@
+What?
+libucfg is a small configuration library in ANSI C.
+
+Who?
+It was written by Torbjörn Lönnemark <tobbez@ryara.net>.
+
+How?
+See example.c for how to use it.
+
+License?
+libucfg is released under the ISC License.
