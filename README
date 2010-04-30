@@ -31,7 +31,7 @@ Some things that are good to know:
  a value or a subsection.
 
  Configuration syntax in EBNF:
- config-node = [<node-name> , ":"] , <config-node-list> | [<node-name> , ":"] , <node-value> ;
+ config-node = [<node-name> , ":"] , <config-node-list> | [<node-name> , ":"] , <node-value> , ";" ;
  config-node-list = "{" , { config-node } , "}" ;
  node-name = <node-name-character> , { <node-name-character> } ;
  node-name-character = ? any visible character except colon ? ;
