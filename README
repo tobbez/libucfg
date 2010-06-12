@@ -18,7 +18,7 @@ Some things that are good to know:
     child: "child value";
     another child: "another child's value";
     child node with list: {
-      "list item1 has some duoble-quotes:"" and "" such"" ";
+      "list item1 has some double-quotes:"" and "" such"" ";
       "list item2";
     }
   }
