@@ -70,8 +70,14 @@ int main(int argc, char **argv)
 	if ((err = ucfg_read_file(&cfg, "example.conf")) == UCFG_OK) {
 
 		/* lookup a value in the config and print it */
-		if (ucfg_lookup(&tmp, cfg, "root:child node with list:") == UCFG_OK)
+		if (ucfg_lookup(&tmp, cfg,
+				"root:child node with list:") == UCFG_OK)
 			printf("%s\n", tmp->value);
+
+		printf("root:child is set to '%s'\n", 
+			ucfg_lookup_string(cfg, "root:child"));
+		if (ucfg_lookup_string(cfg, "abc:def") == NULL)
+			printf("abc:def is not set\n" );
 
 		ucfg_node_destroy(cfg);
 	} else {

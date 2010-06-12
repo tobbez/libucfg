@@ -463,3 +463,15 @@ int ucfg_lookup(struct ucfg_node **found, struct ucfg_node *root, const char *pa
 
 	return UCFG_OK;
 }
+
+/* convenience function for looking up a string */
+char *ucfg_lookup_string(struct ucfg_node *root, const char *path)
+{
+	struct ucfg_node *result;
+
+	if (ucfg_lookup(&result, root, path) != UCFG_OK) {
+		return NULL;
+	}
+
+	return result->value;
+}

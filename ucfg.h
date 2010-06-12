@@ -53,5 +53,6 @@ void ucfg_write(struct ucfg_node *conf, FILE *stream);
 int ucfg_write_file(struct ucfg_node *conf, const char *filename);
 
 int ucfg_lookup(struct ucfg_node **found, struct ucfg_node *root, const char *path);
+char *ucfg_lookup_string(struct ucfg_node *root, const char *path);
 
 #endif
