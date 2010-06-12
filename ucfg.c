@@ -445,6 +445,10 @@ int ucfg_lookup(struct ucfg_node **found, struct ucfg_node *root, const char *pa
 			*found = (*found)->next;
 		}
 
+		if (*found == NULL) {
+			break;
+		}
+
 		curstr = strsepc(&curpos);
 		if (curstr != NULL) {
 			*found = (*found)->sub;
