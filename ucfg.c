@@ -259,6 +259,7 @@ static char *parse_read_value(FILE *stream)
 			fprintf(stderr, "parse_read_value: expected character, got EOF\n");
 			free(ret);
 			ret = NULL;
+			break;
 		} else if (tmp == '"') { /* escaped double-quote or end of value */
 			if ((tmp = getc(stream)) == '"') { /* escaped double-quote */
 				ret[len++] = '"';
@@ -304,6 +305,7 @@ static char *parse_read_name(FILE *stream)
 					"expected character, got EOF\n");
 			free(ret);
 			ret = NULL;
+			break;
 		} else if (tmp == ':') { /* end of name */
 			break;
 		} else {
